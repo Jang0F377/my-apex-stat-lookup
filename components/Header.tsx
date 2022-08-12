@@ -48,7 +48,7 @@ function Header() {
           <div className="hidden items-center text-project-silver md:w-full md:flex justify-evenly  lg:text-4xl">
             {navTitles.map((item) => (
               <Link key={item.name} href={item.href} className="">
-                <div className=" p-3 flex items-center space-x-1 hover:text-dark-red cursor-pointer">
+                <div className=" p-3 flex items-center space-x-1.5 hover:text-dark-red cursor-pointer">
                   <item.icon
                     className="flex-shrink-0 md:h-9 md:w-9 "
                     aria-hidden="true"
