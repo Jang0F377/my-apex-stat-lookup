@@ -6,10 +6,10 @@ interface RealtimeProps {
 }
 
 function Realtime({ realtime }: RealtimeProps) {
-  const [online, setOnline] = useState(realtime?.isOnline);
-  const [inGame, setInGame] = useState(realtime?.isInGame);
-  const [canJoin, setCanJoin] = useState(realtime?.canJoin);
-  const [lobbyState, setLobbyState] = useState(realtime?.lobbyState);
+  const [online] = useState(realtime?.isOnline);
+  console.log(realtime?.isInGame);
+  const [inGame] = useState(realtime?.isInGame);
+  const [lobbyState] = useState(realtime?.lobbyState);
 
   return (
     <div className="mx-auto max-w-5xl">

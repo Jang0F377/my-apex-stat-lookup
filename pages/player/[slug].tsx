@@ -3,6 +3,7 @@ import { ApiResponse } from "../../typings";
 import { useRouter } from "next/router";
 import SelectedLegend from "../../components/SelectedLegend";
 import Realtime from "../../components/Realtime";
+import GlobalStats from "../../components/GlobalStats";
 
 function Player() {
   const router = useRouter();
@@ -40,7 +41,7 @@ function Player() {
   }, []);
 
   return (
-    <div>
+    <div className="">
       {loading ? (
         <div className="text-7xl text-black text-center p-20 m-10 animate-pulse">
           ...Loading
@@ -50,15 +51,18 @@ function Player() {
           ...Error
         </div>
       ) : (
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl justify-center">
           <section className="">
-            <h1 className="text-5xl text-black text-center p-5 m-5">
+            <h1 className="text-5xl text-black text-center p-5 mt-5">
               {playerStats?.global.name}
             </h1>
             <Realtime realtime={playerStats?.realtime} />
           </section>
-          <section className="flex ">
+          <section className="flex justify-center">
             <SelectedLegend selected={playerStats?.legends.selected} />
+          </section>
+          <section>
+            <GlobalStats global={playerStats?.global} />
           </section>
         </div>
       )}

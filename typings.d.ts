@@ -21,7 +21,6 @@ export interface ResGlobalObject {
     last_banReason: string;
     remainingSeconds: number;
   };
-  battlepass: object;
   internalUpdateCount: number;
   level: number;
   levelPrestige: number;
