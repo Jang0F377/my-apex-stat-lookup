@@ -33,14 +33,18 @@ function Header() {
       <Popover className="relative  z-10">
         <div className="flex items-center   py-6  md:space-x-10">
           <div className="flex ml-2 lg:ml-4">
-            <img src="/apex-logo.webp" className="h-20" alt="LOGO" />
+            <img
+              src="/apex-logo.webp"
+              className="h-14 md:h-16 lg:h-20"
+              alt="LOGO"
+            />
           </div>
 
           <div className="flex justify-center text-lg -my-2 font-semibold text-white tracking-wide mx-auto justify-center md:hidden text-center hover:text-dark-red">
             <Link href="/">Apex Legends Lookup</Link>
           </div>
           <div className="md:hidden">
-            <Popover.Button className="bg-project-silver rounded-md p-1 mr-1 items-center justify-center hover:ring-2 hover:ring-muted-dark-red">
+            <Popover.Button className="bg-project-silver text-muted-dark-red rounded-md p-1 mr-1 items-center justify-center">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -79,7 +83,7 @@ function Header() {
                     <img src="/apex-logo.webp" className="h-10" alt="LOGO" />
                   </div>
                   <div className="-mr-2">
-                    <Popover.Button className="bg-project-silver rounded-md p-1 mr-1 items-center justify-center hover:ring-2 hover:ring-muted-dark-red">
+                    <Popover.Button className="bg-project-silver text-muted-dark-red rounded-md p-1 mr-1 items-center justify-center">
                       <span className="sr-only">Close menu</span>
                       <XIcon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
