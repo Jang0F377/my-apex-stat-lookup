@@ -29,7 +29,7 @@ function Header() {
   ];
 
   return (
-    <div className="w-full bg-muted-dark-red">
+    <div className="w-full bg-muted-dark-red border-y-2 border-black">
       <Popover className="relative  z-10">
         <div className="flex items-center   py-6  md:space-x-10">
           <div className="flex ml-2 lg:ml-4">
@@ -51,7 +51,7 @@ function Header() {
           </div>
           <div className="hidden items-center text-project-silver md:w-full md:flex justify-evenly  lg:text-4xl">
             {navTitles.map((item) => (
-              <Link key={item.name} href={item.href} className="">
+              <Link key={item.name} href={item.href}>
                 <div className=" p-3 flex items-center space-x-1.5 hover:text-dark-red cursor-pointer">
                   <item.icon
                     className="flex-shrink-0 md:h-9 md:w-9 "

@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import SelectedLegend from "../../components/SelectedLegend";
 import Realtime from "../../components/Realtime";
 import GlobalStats from "../../components/GlobalStats";
+import AllLegends from "../../components/AllLegends";
 
 function Player() {
   const router = useRouter();
@@ -52,17 +53,20 @@ function Player() {
         </div>
       ) : (
         <div className="mx-auto max-w-7xl justify-center">
-          <section className="">
-            <h1 className="text-5xl text-black text-center p-5 mt-5">
+          <section className="mt-2 mb-3">
+            <h1 className="text-5xl text-black text-center p-5 font-medium tracking-wide">
               {playerStats?.global.name}
             </h1>
             <Realtime realtime={playerStats?.realtime} />
           </section>
-          <section className="flex justify-center">
+          <section className="flex justify-center my-3">
             <SelectedLegend selected={playerStats?.legends.selected} />
           </section>
           <section>
             <GlobalStats global={playerStats?.global} />
+          </section>
+          <section>
+            <AllLegends legends={playerStats?.legends.all} />
           </section>
         </div>
       )}

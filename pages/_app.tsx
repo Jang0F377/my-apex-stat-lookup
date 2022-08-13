@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="font-serif">
+    <div>
       <Header />
       <Component {...pageProps} />
       <Footer />
