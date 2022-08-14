@@ -40,10 +40,10 @@ const Home = () => {
         <h3 className="text-xl  lg:text-2xl lg:m-1 p-1">to the</h3>
         <img
           src="/apex-bg-removebg-preview.webp"
-          className="lg:max-w-7xl my-2 md:my-0 mx-auto"
+          className="lg:max-w-7xl my-2 md:my-0 mx-auto border-y-2 xl:border-y-4 border-black"
           alt={"ERR"}
         />
-        <h2 className="text-2xl lg:text-4xl">Stat Lookup!</h2>
+        <h2 className="text-2xl mt-1 lg:mt-2 lg:text-4xl">Stat Lookup!</h2>
       </section>
       <section className="lg:max-w-2xl p-1 m-1 mt-2 mx-auto">
         <div className="mx-1 md:mx-2">
