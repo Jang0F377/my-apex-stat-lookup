@@ -1,7 +1,7 @@
 function Contact() {
   return (
-    <div>
-      <h1>Contact Page in progress!</h1>
+    <div className="text-center text-project-silver animate-pulse text-4xl">
+      <h1>Contact Page coming soon!</h1>
       <h1>Check back later!</h1>
     </div>
   );

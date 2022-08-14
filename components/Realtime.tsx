@@ -7,7 +7,6 @@ interface RealtimeProps {
 
 function Realtime({ realtime }: RealtimeProps) {
   const [online] = useState(realtime?.isOnline);
-  console.log(realtime?.isInGame);
   const [inGame] = useState(realtime?.isInGame);
   const [lobbyState] = useState(realtime?.lobbyState);
 

@@ -6,6 +6,32 @@ export interface ApiResponse {
   total: object;
 }
 
+export interface Legends {
+  [index: string]: GlobalLegendsObject;
+  Ash: GlobalLegendsObject;
+  Bangalore: GlobalLegendsObject;
+  Bloodhound: GlobalLegendsObject;
+  Caustic: GlobalLegendsObject;
+  Crypto: GlobalLegendsObject;
+  Fuse: GlobalLegendsObject;
+  Gibraltar: GlobalLegendsObject;
+  Horizon: GlobalLegendsObject;
+  Lifeline: GlobalLegendsObject;
+  Loba: GlobalLegendsObject;
+  "Mad Maggie": GlobalLegendsObject;
+  Mirage: GlobalLegendsObject;
+  Newcastle: GlobalLegendsObject;
+  Octane: GlobalLegendsObject;
+  Pathfinder: GlobalLegendsObject;
+  Rampart: GlobalLegendsObject;
+  Revenant: GlobalLegendsObject;
+  Seer: GlobalLegendsObject;
+  Valkyrie: GlobalLegendsObject;
+  Vantage: GlobalLegendsObject;
+  Wattson: GlobalLegendsObject;
+  Wraith: GlobalLegendsObject;
+}
+
 export interface ResGlobalObject {
   arena: {
     rankDiv: number;
@@ -37,12 +63,8 @@ export interface ResGlobalObject {
   uid: number;
 }
 
-export interface GlobalLegendsObject {
-  ImgAssets: {
-    banner: string;
-    icon: string;
-  };
-  data: [
+export interface LegendsDataObject {
+  data?: [
     {
       name: string;
       value: number;
@@ -57,7 +79,29 @@ export interface GlobalLegendsObject {
       };
     }
   ];
-  gameInfo: {
+}
+
+export interface GlobalLegendsObject {
+  ImgAssets: {
+    banner: string;
+    icon: string;
+  };
+  data?: [
+    {
+      name: string;
+      value: number;
+      key: string;
+      rank: {
+        rankPos: number;
+        topPercent: number;
+      };
+      rankPlatformSpecific: {
+        rankPos: string;
+        topPercent: string;
+      };
+    }
+  ];
+  gameInfo?: {
     badges: [
       {
         name: string;
@@ -92,7 +136,7 @@ export interface SelectedLegendObject {
 }
 
 export interface ResLegendsObject {
-  all: GlobalLegendsObject;
+  all: Legends;
   selected: SelectedLegendObject;
 }
 

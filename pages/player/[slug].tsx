@@ -54,7 +54,7 @@ function Player() {
       ) : (
         <div className="mx-auto max-w-7xl justify-center">
           <section className="mt-2 mb-3">
-            <h1 className="text-5xl text-black text-center p-5 font-medium tracking-wide">
+            <h1 className="text-3xl p-1.5  md:text-5xl text-black text-center md:p-5 font-medium tracking-wide">
               {playerStats?.global.name}
             </h1>
             <Realtime realtime={playerStats?.realtime} />
