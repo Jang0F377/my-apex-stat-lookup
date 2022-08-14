@@ -12,4 +12,7 @@ implementing a blog/news page with recent notes ex. patch notes, current crafter
 * Tailwind CSS
 
 ## Will continue to update!!
-### Thank you!
+
+# Check out the live version hosted on Vercel.
+## https://my-apex-stat-lookup.vercel.app/
+### Thank you
