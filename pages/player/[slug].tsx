@@ -13,12 +13,12 @@ function Player() {
   const [error, setError] = useState(false);
   const [playerStats, setPlayerStats] = useState<ApiResponse>();
 
-  const URL = `https://obscure-shelf-17700.herokuapp.com/https://api.mozambiquehe.re/bridge?player=${gamertag}&platform=${system}`;
+  const URL = `https://api.mozambiquehe.re/bridge?player=${gamertag}&platform=${system}`;
 
   async function api(url: string) {
     setLoading(true);
     const headers: HeadersInit = {
-      Authorization: `${process.env.NEXT_PUBLIC_APEX_STAT_API}`,
+      Authorization: `${process.env.APEX_STAT_API}`,
     };
     const opts: RequestInit = {
       method: "GET",
