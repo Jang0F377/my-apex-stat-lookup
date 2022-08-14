@@ -8,33 +8,45 @@ interface GlobalStatsProps {
 
 function GlobalStats({ global }: GlobalStatsProps) {
   return (
-    <div className="bg-project-silver rounded-lg  border-2 border-black px-2.5 py-1.5">
+    <div className="bg-project-silver lg:max-w-4xl xl:max-w-5xl lg:mx-auto rounded-lg  border-2 border-black mx-1.5 lg:px-2.5 py-1.5">
       <h2 className="text-3xl text-center my-1 py-1 font-medium">
         At a glance:
       </h2>
-      <div className="flex flex-col .5">
+      <div className="flex flex-col ">
         {/*Top is tag/platform/platform logo/level/prestige*/}
-        <section className="flex flex-row w-full space-x-3">
-          <div className="flex w-full justify-evenly text-white rounded-lg bg-muted-dark-red border-2 border-black p-1 ">
-            <div className="flex flex-col items-center p-1">
-              <p className="  font-semibold text-xl">Gamertag</p>
-              <p className=" my-auto font-medium text-lg">{global?.name}</p>
+        <section className="flex flex-col md:flex-row w-full lg:space-x-3">
+          <div className="my-2 md:my-0 flex flex-col md:flex-row w-full md:mx-1  justify-evenly text-white rounded-lg bg-muted-dark-red border-2 border-black  p-1">
+            <div className="flex flex-col items-center p-1 ">
+              <p className="font-semibold text-xl">Gamertag</p>
+              <p className="my-auto font-medium text-lg">{global?.name}</p>
             </div>
-            <div className="flex flex-col items-center  p-1">
+            <div className="flex flex-col items-center p-1 ">
               <p className="font-semibold text-xl">Platform</p>
-              <img
-                src="/ps-logo-removebg-preview.webp"
-                alt={"PS"}
-                className="flex-shrink-0 bg-white rounded  h-10 w-10"
-              />
+              {global?.platform === "PS4" ? (
+                <img
+                  src="/ps-logo-removebg-preview.webp"
+                  alt={"PS"}
+                  className="flex-shrink-0 bg-white rounded  h-10 w-10"
+                />
+              ) : global?.platform === "X1" ? (
+                <img
+                  src="/xbox-logo-transparent-removebg-preview.webp"
+                  alt={"PS"}
+                  className="flex-shrink-0 bg-white rounded  h-10 w-10"
+                />
+              ) : global?.platform === "PC" ? (
+                <DesktopComputerIcon className="flex-shrink-0 bg-white rounded  h-10 w-10" />
+              ) : (
+                <div />
+              )}
             </div>
           </div>
-          <div className="flex w-full justify-evenly text-white rounded-lg bg-muted-dark-red border-2 border-black  p-1">
+          <div className=" mb-2 md:mb-0 md:my-0 flex flex-col md:flex-row w-full md:mx-1 justify-evenly text-white rounded-lg bg-muted-dark-red border-2 border-black  p-1">
             <div className="flex flex-col items-center p-1">
               <p className="font-semibold text-xl">My Level</p>
               <p className=" my-auto font-medium text-lg">{global?.level}</p>
             </div>
-            <div className="flex  ">
+            <div className="flex mx-auto">
               {global?.levelPrestige ? (
                 <div className="flex flex-col items-center ">
                   <p className="font-semibold text-xl ">Prestige Level</p>
@@ -62,8 +74,8 @@ function GlobalStats({ global }: GlobalStatsProps) {
         </section>
         {/*Split Grid in Half under Top tag to show*/}
         {/*BR Rank ============ Arena Rank*/}
-        <div className="flex flex-row justify-evenly lg:my-6 text-white">
-          <section className="flex flex-col lg:px-14 py-2 rounded-lg bg-muted-dark-red border-2 border-black ">
+        <div className="flex flex-col md:flex-row justify-evenly md:my-6 text-white">
+          <section className="flex mb-2 md:mb-0 flex-col px-5 md:px-10 lg:px-14 py-2 rounded-lg bg-muted-dark-red border-2 border-black ">
             <h1 className="text-2xl text-center font-semibold lg:tracking-wide">
               Apex BR
             </h1>
@@ -78,14 +90,14 @@ function GlobalStats({ global }: GlobalStatsProps) {
             </div>
 
             <div>
-              <img src={global?.rank.rankImg} alt={"ERR"} />
+              <img src={global?.rank.rankImg} alt={"ERR"} className="mx-auto" />
             </div>
             <div className="text-center ">
               <h3>Division</h3>
               <p>{global?.rank.rankDiv}</p>
             </div>
           </section>
-          <section className="flex flex-col lg:px-14 py-2  rounded-lg bg-muted-dark-red border-2 border-black">
+          <section className="flex flex-col px-5 md:px-10 lg:px-14 py-2  rounded-lg bg-muted-dark-red border-2 border-black">
             <h1 className="text-2xl text-center font-semibold lg:tracking-wide">
               Arenas
             </h1>
@@ -100,7 +112,11 @@ function GlobalStats({ global }: GlobalStatsProps) {
             </div>
 
             <div>
-              <img src={global?.arena.rankImg} alt={"ERR"} />
+              <img
+                src={global?.arena.rankImg}
+                alt={"ERR"}
+                className="mx-auto"
+              />
             </div>
             <div className="text-center ">
               <h3>Division</h3>

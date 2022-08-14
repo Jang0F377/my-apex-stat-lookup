@@ -12,7 +12,7 @@ function Realtime({ realtime }: RealtimeProps) {
   const [lobbyState] = useState(realtime?.lobbyState);
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <div className="md:mx-auto mx-1.5  md:max-w-5xl">
       <div className="flex justify-center mx-auto flex-row space-x-2.5">
         {online ? (
           <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-project-silver text-green-500">

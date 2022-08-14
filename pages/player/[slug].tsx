@@ -44,11 +44,11 @@ function Player() {
   return (
     <div className="">
       {loading ? (
-        <div className="text-7xl text-black text-center p-20 m-10 animate-pulse">
+        <div className="text-3xl lg:text-7xl text-bright-light-red text-center py-10 lg:py-0 lg:p-20 m-10 animate-pulse">
           ...Loading
         </div>
       ) : error ? (
-        <div className="text-7xl text-black text-center p-20 m-10 animate-pulse">
+        <div className="text-7xl text-bright-light-red text-center p-20 m-10 animate-pulse">
           ...Error
         </div>
       ) : (
@@ -65,7 +65,7 @@ function Player() {
           <section>
             <GlobalStats global={playerStats?.global} />
           </section>
-          <section>
+          <section className="flex my-3 justify-center">
             <AllLegends legends={playerStats?.legends.all} />
           </section>
         </div>
