@@ -18,7 +18,7 @@ function Player() {
   async function api(url: string) {
     setLoading(true);
     const headers: HeadersInit = {
-      Authorization: `${process.env.APEX_STAT_API}`,
+      Authorization: `${process.env.NEXT_PUBLIC_APEX_STAT_API}`,
     };
     const opts: RequestInit = {
       method: "GET",
