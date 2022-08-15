@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { ChangeEvent, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 const Home = () => {
   const [selectValue, setSelectValue] = useState("PS4");

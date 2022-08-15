@@ -1,13 +1,13 @@
 import { Popover, Transition } from "@headlessui/react";
 import {
+  MenuIcon,
+  NewspaperIcon,
   HomeIcon,
   MapIcon,
-  NewspaperIcon,
   PhoneIcon,
-  TerminalIcon,
+  CashIcon,
   XIcon,
-} from "@heroicons/react/solid";
-import { MenuIcon } from "@heroicons/react/outline";
+} from "@heroicons/react/outline";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -26,7 +26,7 @@ function Header() {
     {
       name: "Crafter",
       href: "/rotations/crafter",
-      icon: TerminalIcon,
+      icon: CashIcon,
     },
     {
       name: "Blog/News",

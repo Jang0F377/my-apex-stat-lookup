@@ -49,6 +49,16 @@ function MapRotation() {
       <h2 className="text-3xl lg:text-4xl text-center my-1 py-1 font-medium">
         Map Rotation:
       </h2>
+      <p className="text-sm text-center text-dark-red animate-pulse">
+        Data/Images provided by{" "}
+        <a
+          target="_blank"
+          href="https://apexlegendsstatus.com/"
+          rel="noreferrer"
+        >
+          Apex Legends Status
+        </a>
+      </p>
       {mapLoading ? (
         <div className="text-3xl lg:text-7xl text-bright-light-red text-center py-10 lg:py-0 lg:p-20 m-10 animate-pulse">
           ...Loading
@@ -97,16 +107,6 @@ function MapRotation() {
               {/**/}
             </section>
           </div>
-          <p className="text-sm text-center animate-pulse">
-            Data/Images provided by{" "}
-            <a
-              target="_blank"
-              href="https://apexlegendsstatus.com/"
-              rel="noreferrer"
-            >
-              Apex Legends Status
-            </a>
-          </p>
         </div>
       )}
     </div>

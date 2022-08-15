@@ -45,7 +45,7 @@ function Crafter() {
           <h2 className="text-3xl lg:text-4xl text-center my-1 py-1 font-medium">
             In the Crafter:
           </h2>
-          <p className="text-sm text-center animate-pulse">
+          <p className="text-sm text-center text-dark-red animate-pulse">
             Data/Images provided by{" "}
             <a
               target="_blank"

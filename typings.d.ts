@@ -175,3 +175,10 @@ export interface CrafterItemObject {
     rarityHex: string;
   };
 }
+
+export interface NewsObject {
+  title: string;
+  link: string;
+  img: string;
+  short_desc: string;
+}

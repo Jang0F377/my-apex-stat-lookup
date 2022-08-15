@@ -1,6 +1,5 @@
 import { ResGlobalObject } from "../typings";
 import { DesktopComputerIcon } from "@heroicons/react/outline";
-import { useEffect, useState } from "react";
 
 interface GlobalStatsProps {
   global?: ResGlobalObject;
