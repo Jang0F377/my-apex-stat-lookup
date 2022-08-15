@@ -25,8 +25,8 @@ function FloatingFooter() {
                   Made possible with the unofficial apex legends api.{" "}
                 </span>
                 <span className="hidden md:inline">
-                  Developed and maintained by the awesome people at
-                  apexlegendsstatus.com
+                  Developed and maintained by the awesome people at Apex Legends
+                  Status
                 </span>
               </p>
             </div>

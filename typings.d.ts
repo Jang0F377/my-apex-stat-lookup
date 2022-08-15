@@ -63,24 +63,6 @@ export interface ResGlobalObject {
   uid: number;
 }
 
-export interface LegendsDataObject {
-  data?: [
-    {
-      name: string;
-      value: number;
-      key: string;
-      rank: {
-        rankPos: number;
-        topPercent: number;
-      };
-      rankPlatformSpecific: {
-        rankPos: string;
-        topPercent: string;
-      };
-    }
-  ];
-}
-
 export interface GlobalLegendsObject {
   ImgAssets: {
     banner: string;
@@ -149,4 +131,47 @@ export interface ResRealtimeObject {
   partyFull: number;
   selectedLegend: string;
   lobbyState: string;
+}
+
+export interface MapRotationObject {
+  battle_royale: RotationCurrentNextInterface;
+  arenas: RotationCurrentNextInterface;
+  ranked: RotationCurrentNextInterface;
+  arenasRanked: RotationCurrentNextInterface;
+  ltm: RotationCurrentNextInterface;
+}
+
+export interface RotationCurrentNextInterface {
+  current: {
+    readableDate_start: string;
+    readableDate_end: string;
+    map: string;
+    DurationInMinutes: number;
+    asset: string;
+    remainingMins: number;
+  };
+  next: {
+    readableDate_start: string;
+    readableDate_end: string;
+    map: string;
+    DurationInMinutes: number;
+    asset: string;
+  };
+}
+
+export interface CraftingRotationObject {
+  bundle: string;
+  bundleType: string;
+  bundleContent: Array<CrafterItemObject>;
+}
+
+export interface CrafterItemObject {
+  item: string;
+  cost: number;
+  itemType: {
+    name: string;
+    rarity: string;
+    asset: string;
+    rarityHex: string;
+  };
 }

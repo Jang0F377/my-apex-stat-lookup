@@ -1,4 +1,4 @@
-import { GlobalLegendsObject, Legends, LegendsDataObject } from "../typings";
+import { GlobalLegendsObject, Legends } from "../typings";
 
 interface AllLegendsProps {
   legends?: Legends;
@@ -52,7 +52,7 @@ const RenderLegendDataCard = ({ legend, name }: RenderLegendCardProps) => {
       <h1 className="text-3xl mt-0.5 text-center md:tracking-wide font-medium text-project-silver">
         {name}
       </h1>
-      <div className="grid items-center p-1 md:grid-cols-2 sp lg:grid-cols-3 md:space-x-3">
+      <div className="grid items-center p-1 md:grid-cols-2  lg:grid-cols-3 md:space-x-3">
         {legend?.map((a) => (
           <div key={a.key} className="mx-1 col-span-1 p-1  border-black">
             <h2 className=" mx-auto text-center font-semibold py-1 my-1">

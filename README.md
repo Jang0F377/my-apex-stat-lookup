@@ -11,6 +11,8 @@ implementing a blog/news page with recent notes ex. patch notes, current crafter
   * Big shout out to Hugo for creating/maintaining the api.
 * Tailwind CSS
 
+
+
 ## Will continue to update!!
 
 # Check out the live version hosted on Vercel.
