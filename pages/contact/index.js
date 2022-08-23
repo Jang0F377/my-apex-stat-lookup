@@ -5,9 +5,10 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const form = useRef(null);
+  const form = useRef();
 
-  const sendEmail = (e: { preventDefault: () => void }) => {
+  const sendEmail = (e) => {
+    if (!name || !email || !message) return;
     e.preventDefault();
 
     // @ts-ignore
@@ -26,7 +27,10 @@ function Contact() {
           alert("Thank you for your message!");
         },
         (error) => {
-          console.log(error.text);
+          alert(
+            "Error sending!! Please message me!  That's a joke." +
+              "It will notify me. Thank you and apologies!"
+          );
         }
       );
   };
