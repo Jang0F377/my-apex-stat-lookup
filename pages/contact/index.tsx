@@ -1,6 +1,34 @@
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 function Contact() {
-  const handleClick = () => {
-    alert("Functionality next in line, thank you for your interest");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const form = useRef(null);
+
+  const sendEmail = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
+    // @ts-ignore
+    emailjs
+      .sendForm(
+        "service_nl8wc35",
+        "template_mrl1t2k",
+        form.current,
+        "y3XUj2oOCpCCqvyyJ"
+      )
+      .then(
+        () => {
+          setName("");
+          setEmail("");
+          setMessage("");
+          alert("Thank you for your message!");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -11,7 +39,11 @@ function Contact() {
         </h2>
       </div>
       <div className="mt-12">
-        <form className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+        >
           <div className="sm:col-span-2">
             <label
               htmlFor="first-name"
@@ -21,6 +53,8 @@ function Contact() {
             </label>
             <div className="mt-1">
               <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 type="text"
                 name="first-name"
                 id="first-name"
@@ -38,6 +72,8 @@ function Contact() {
             </label>
             <div className="mt-1">
               <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 name="email"
                 type="email"
@@ -55,17 +91,18 @@ function Contact() {
             </label>
             <div className="mt-1">
               <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 id="message"
                 name="message"
                 rows={4}
                 className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
-                defaultValue={""}
               />
             </div>
           </div>
           <div className="sm:col-span-2">
             <button
-              onClick={handleClick}
+              onClick={sendEmail}
               type="button"
               className="w-full inline-flex items-center justify-center px-6 py-3 rounded-md shadow-sm text-base font-medium text-white bg-muted-dark-red hover:bg-dark-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-muted-dark-red"
             >
